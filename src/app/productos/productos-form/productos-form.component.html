@@ -1,0 +1,66 @@
+<p>productos-form works!</p>
+
+<div class="col-lg-6 offset-sm-3">
+
+  <form (ngSubmit)="createProductos()" #form="ngForm" class= "form-horizontal">
+  
+      <fieldset>
+    
+    <!-- Form Name -->
+    <legend>Create Product</legend>
+    
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-12 control-label" for="Code">Code</label>  
+      <div class="col-md-12">
+      <input id="Code" name="Code" type="text" [(ngModel)]="productos.IdProd"
+      placeholder="Code" class="form-control input-md" required="">
+        
+      </div>
+    </div>
+    
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-12 control-label" for="Name">Name</label>  
+      <div class="col-md-12">
+      <input id="Name" name="Name" type="text" [(ngModel)]="productos.nombreProd"
+      placeholder="name" class="form-control input-md">
+        
+      </div>
+    </div>
+    
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-12 control-label" for="Tipo">Tipo</label>  
+      <div class="col-md-12">
+      <input id="Tipo" name="Tipo" type="text" [(ngModel)]="productos.claseProd"
+       placeholder="Tipo" class="form-control input-md">
+        
+      </div>
+    </div>
+    
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-12 control-label" for="valor">Valor</label>  
+      <div class="col-md-12">
+      <input id="valor" name="valor" type="text" [(ngModel)]="productos.valor"
+      placeholder="Valor" class="form-control input-md" required="">
+        
+      </div>
+    </div>
+    
+    <!-- Button (Double) -->
+    <div class="form-group">
+      <label class="col-md-12 control-label" for="button1id"></label>
+      <div class="col-md-12">
+        <button id="button1id" name="button1id" class="btn btn-success">Save</button>
+        <button id="button2id" name="button2id" class="btn btn-danger" [routerLink]="['/productos/list']" routerLinkActive="router-link-active" >Cancel</button>
+      </div>
+    </div>
+    
+    </fieldset>
+    </form>
+    
+
+
+</div>

@@ -1,0 +1,44 @@
+<p>productos-list works!</p>
+
+<div class="row">
+    
+    <div class="col-4" *ngFor="let item of productosList">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="https://st3.depositphotos.com/2885805/13199/v/600/depositphotos_131993058-stock-illustration-bakery-basket-with-bread-realistic.jpg" alt="Card image cap">
+            <div class="card-body">
+            <h5 class="card-title">{{item.nombreProd}}</h5>
+            <p class="card-text">{{item.claseProd}} -ID:  {{item.IdProd}}</p>
+            <a (click) = "deleteProductos(item.IdProd!)" class="btn btn-danger">Delete</a>
+            </div>
+      </div>
+    </div>
+
+</div>
+
+
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">IdProd</th>
+        <th scope="col">Nombre</th>
+        <th scope="col"> Clase</th>
+        <th scope="col">Valor uni. </th>
+        <th scope="col"> Actions</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor= "let item of productosList">
+        
+        <th scope="row">{{item.IdProd}}</th>
+        <td>{{item.nombreProd}}</td>
+        <td>{{item.claseProd}}</td>
+        <td>{{item.valor}}</td>
+        <td> <a (click) = "deleteProductos(item.IdProd)" class="btn btn-danger">Delete </a>    </td>
+
+    </tr>
+       
+    </tbody>
+  </table>
+  
+  
