@@ -4,11 +4,13 @@
     
     <div class="col-4" *ngFor="let item of productosList">
         <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="https://st3.depositphotos.com/2885805/13199/v/600/depositphotos_131993058-stock-illustration-bakery-basket-with-bread-realistic.jpg" alt="Card image cap">
+            <img class="card-img-top" src="https://st3.depositphotos.com/2885805/13199/v/600/depositphotos_131993058-stock-illustration-bakery-basket-with-bread-realistic.jpg" 
+            alt="Card image cap">
             <div class="card-body">
             <h5 class="card-title">{{item.nombreProd}}</h5>
-            <p class="card-text">{{item.claseProd}} -ID:  {{item.IdProd}}</p>
+            <p class="card-text">{{item.claseProd}} -ID:  {{item.IdProd}} -Precio: {{item.valor}}</p>
             <a (click) = "deleteProductos(item.IdProd!)" class="btn btn-danger">Delete</a>
+            <a class="btn btn-info" [routerLink]="['/productos/edit', item.IdProd]" routerLinkActive="active" >Edit</a>
             </div>
       </div>
     </div>
@@ -34,11 +36,15 @@
         <td>{{item.nombreProd}}</td>
         <td>{{item.claseProd}}</td>
         <td>{{item.valor}}</td>
-        <td> <a (click) = "deleteProductos(item.IdProd)" class="btn btn-danger">Delete </a>    </td>
+        <td> 
+          <a (click) = "deleteProductos(item.IdProd)" class="btn btn-danger">Delete </a> 
+          <a class="btn btn-info" [routerLink]="['/productos/edit', item.IdProd]" routerLinkActive="active" >Edit</a>
+        </td>
 
     </tr>
        
     </tbody>
   </table>
   
-  
+
+ 

@@ -17,7 +17,7 @@ export class ProductosService {
     return this.httpClient.get<Iproductos[]>(`${this.API_URL}/productos`);
   }
 
-  getProductosbyid(productoId:string):Observable<Iproductos>{
+  getProductosbyid(productoId:number):Observable<Iproductos>{
     return this.httpClient.get<Iproductos>(`${this.API_URL}/productos/${productoId}`);
   }
 
@@ -25,7 +25,7 @@ export class ProductosService {
     return this.httpClient.post<Iproductos>(`${this.API_URL}/productos/create`, productos);
   }
   
-  updateProductos(productoId:string, productos:Iproductos):Observable<Iproductos>{
+  updateProductos(productoId:number, productos:Iproductos):Observable<Iproductos>{
     return this.httpClient.put<Iproductos>(`${this.API_URL}/productos/update/${productoId}`,productos);
   }
 
