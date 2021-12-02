@@ -1,10 +1,10 @@
 import express from "express";
 const app = express();
 
-app.use(static(__dirname + '/app'));
+app.use(static(__dirname + '/dist/frontend'));
 
 app.all('*', (req, res) => {
-  res.status(200).sendFile(__dirname + '/app/index.html');
+  res.status(200).sendFile(__dirname + '/dist/frontend/index.html');
 });
 
 app.listen(process.env.PORT || 8080);
