@@ -9,7 +9,7 @@ import { Iproductos } from '../productos.interface';
 })
 export class ProductosService {
 
-  API_URL:string = 'https://backendproductsmintic.herokuapp.com/';
+  API_URL:string = 'https://backendproductsmintic.herokuapp.com';
 
   constructor(private readonly httpClient : HttpClient) { }
 
